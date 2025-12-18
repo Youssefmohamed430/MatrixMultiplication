@@ -14,12 +14,12 @@ public class Matrix {
     final double[][] data;
 
     public Matrix(int rows, int cols) {
-        if (rows >= 1 && cols >= 1) {
+        if (rows > 1 && cols > 1) {
             this.rows = rows;
             this.cols = cols;
             this.data = new double[rows][cols];
         } else {
-            throw new IllegalArgumentException("Matrix dimensions must be positive");
+            throw new IllegalArgumentException("Matrix dimensions must be greater than 1");
         }
     }
 

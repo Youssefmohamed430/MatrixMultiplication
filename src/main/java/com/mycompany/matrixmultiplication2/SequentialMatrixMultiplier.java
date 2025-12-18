@@ -7,8 +7,8 @@ package com.mycompany.matrixmultiplication2;
 public class SequentialMatrixMultiplier implements MatrixMultiplier {
     public Matrix multiply(Matrix a, Matrix b) {
         if (a.getColCount() != b.getRowCount()) {
-            int var10002 = a.getRowCount();
-            throw new IllegalArgumentException("Incompatible dimensions: " + var10002 + "x" + a.getColCount() + " * " + b.getRowCount() + "x" + b.getColCount());
+            int rownum = a.getRowCount();
+            throw new IllegalArgumentException("Incompatible dimensions: " + rownum + "x" + a.getColCount() + " * " + b.getRowCount() + "x" + b.getColCount());
         } else {
             int m = a.getRowCount();
             int n = a.getColCount();

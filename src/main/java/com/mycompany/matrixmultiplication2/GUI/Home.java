@@ -10,6 +10,7 @@ import com.mycompany.matrixmultiplication2.Matrix;
 import com.mycompany.matrixmultiplication2.MatrixBenchMark;
 import com.mycompany.matrixmultiplication2.MatrixMultiplier;
 import com.mycompany.matrixmultiplication2.SequentialMatrixMultiplier;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -39,7 +40,7 @@ public class Home extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         RunBenchmark = new javax.swing.JButton();
-        Size = new javax.swing.JTextField();
+        Rows = new javax.swing.JTextField();
         ResultPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -51,6 +52,12 @@ public class Home extends javax.swing.JFrame {
         SpeedUprow = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         Parallelrow = new javax.swing.JTextField();
+        IsEqualWithMfj_row = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        IsEqualWithMfj_block = new javax.swing.JTextField();
+        Cols = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,13 +65,13 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("Matrix Multiplication");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setText("Size");
+        jLabel2.setText("Rows");
 
         RunBenchmark.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         RunBenchmark.setText("Run Benchmark");
         RunBenchmark.addActionListener(this::RunBenchmarkActionPerformed);
 
-        Size.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Rows.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Sequential");
@@ -91,38 +98,59 @@ public class Home extends javax.swing.JFrame {
 
         Parallelrow.setEditable(false);
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("IsEqual ");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setText("IsEqual ");
+
         javax.swing.GroupLayout ResultPanelLayout = new javax.swing.GroupLayout(ResultPanel);
         ResultPanel.setLayout(ResultPanelLayout);
         ResultPanelLayout.setHorizontalGroup(
             ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ResultPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(ResultPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addGroup(ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ResultPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(339, 339, 339)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(SpeedUpblock, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(ResultPanelLayout.createSequentialGroup()
                                 .addGap(236, 236, 236)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(41, 41, 41)
-                                .addComponent(Sequential, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(81, Short.MAX_VALUE))
+                                .addComponent(Sequential, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 287, Short.MAX_VALUE))
+                            .addGroup(ResultPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(SpeedUpblock, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(ResultPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ResultPanelLayout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultPanelLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(69, 69, 69)))
                         .addGroup(ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SpeedUprow)
-                            .addComponent(Parallelrow, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Paralleblock, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(83, Short.MAX_VALUE))))
+                            .addComponent(Parallelrow)
+                            .addComponent(IsEqualWithMfj_row, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ResultPanelLayout.createSequentialGroup()
+                                .addGap(190, 190, 190)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Paralleblock, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ResultPanelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addComponent(IsEqualWithMfj_block, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ResultPanelLayout.setVerticalGroup(
             ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,27 +171,44 @@ public class Home extends javax.swing.JFrame {
                     .addComponent(SpeedUprow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SpeedUpblock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addGap(70, 70, 70))
+                .addGap(27, 27, 27)
+                .addGroup(ResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(IsEqualWithMfj_row, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(IsEqualWithMfj_block, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21))
         );
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setText("Columns");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(ResultPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(232, 232, 232)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Size, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(RunBenchmark, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Rows, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Cols, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)))
+                .addComponent(RunBenchmark, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(ResultPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +219,9 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(RunBenchmark)
-                    .addComponent(Size, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Rows, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cols, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addComponent(ResultPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -184,27 +231,52 @@ public class Home extends javax.swing.JFrame {
 
     private void RunBenchmarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RunBenchmarkActionPerformed
         // TODO add your handling code here:
-         int size = Integer.parseInt(this.Size.getText());
-        MatrixMultiplier seq = new SequentialMatrixMultiplier();
-        MatrixMultiplier fj_row = new ForkJoinMatrixMultiplier(64);
-        MatrixMultiplier fj_block = new BlockMatrixMultiplier(128);
-        Matrix A = Matrix.random(size, size);
-        Matrix B = Matrix.random(size, size);
-        
-        long seqTime = MatrixBenchMark.run(seq, A, B);
-        long fj_rowVar = MatrixBenchMark.run(fj_row, A, B);
-        long fj_blockVar = MatrixBenchMark.run(fj_block, A, B);
-        
-        double speedupRow = (double)seqTime / (double)fj_rowVar;
-        double speedupBlock = (double)seqTime / (double)fj_blockVar;
-        
-        this.ResultPanel.setVisible(true);
-        this.Sequential.setText(String.valueOf(seqTime));
-        this.Paralleblock.setText(String.valueOf(fj_blockVar));
-        this.Parallelrow.setText(String.valueOf(fj_rowVar));
-        this.SpeedUpblock.setText(String.valueOf(speedupBlock));
-        this.SpeedUprow.setText(String.valueOf(speedupRow));
-        
+         
+        try {
+            int rows = Integer.parseInt(this.Rows.getText());
+            int cols = Integer.parseInt(this.Cols.getText());
+            MatrixMultiplier seq = new SequentialMatrixMultiplier();
+            MatrixMultiplier fj_row = new ForkJoinMatrixMultiplier(64);
+            MatrixMultiplier fj_block = new BlockMatrixMultiplier(128);
+            Matrix A = Matrix.random(rows, cols);
+            Matrix B = Matrix.random(rows, cols);
+            
+            MatrixBenchMark MBseq = new MatrixBenchMark();
+            MatrixBenchMark MBfj_row = new MatrixBenchMark();
+            MatrixBenchMark MBfj_block = new MatrixBenchMark();
+            
+            long seqTime = MBseq.run(seq, A, B);
+            long fj_rowVar = MBfj_row.run(fj_row, A, B);
+            long fj_blockVar = MBfj_block.run(fj_block, A, B);
+            
+            double speedupRow = (double)seqTime / (double)fj_rowVar;
+            double speedupBlock = (double)seqTime / (double)fj_blockVar;
+            
+            Matrix MSeq = MBseq.GetMultiplyResult();
+            Matrix Mfj_row = MBfj_row.GetMultiplyResult();
+            Matrix Mfj_block = MBfj_block.GetMultiplyResult();
+            
+            boolean IsEqualWithMfj_row = MSeq.equalsWithTolerance(Mfj_row, 1e-9);
+            boolean IsEqualWithMfj_block = MSeq.equalsWithTolerance(Mfj_block, 1e-9);
+            
+            this.ResultPanel.setVisible(true);
+            this.IsEqualWithMfj_row.setText(String.valueOf(IsEqualWithMfj_row));
+            this.IsEqualWithMfj_block.setText(String.valueOf(IsEqualWithMfj_block));
+            this.Sequential.setText(String.valueOf(seqTime));
+            this.Paralleblock.setText(String.valueOf(fj_blockVar));
+            this.Parallelrow.setText(String.valueOf(fj_rowVar));
+            this.SpeedUpblock.setText(String.valueOf(speedupBlock));
+            this.SpeedUprow.setText(String.valueOf(speedupRow));
+        }
+        catch(Exception ex)
+        {
+            JOptionPane.showMessageDialog(
+                   null,
+                   "Error: " + ex.getMessage(),
+                   "Exception",
+                   JOptionPane.ERROR_MESSAGE
+           );   
+        }
     }//GEN-LAST:event_RunBenchmarkActionPerformed
 
     /**
@@ -233,20 +305,26 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Cols;
+    private javax.swing.JTextField IsEqualWithMfj_block;
+    private javax.swing.JTextField IsEqualWithMfj_row;
     private javax.swing.JTextField Paralleblock;
     private javax.swing.JTextField Parallelrow;
     private javax.swing.JPanel ResultPanel;
+    private javax.swing.JTextField Rows;
     private javax.swing.JButton RunBenchmark;
     private javax.swing.JTextField Sequential;
-    private javax.swing.JTextField Size;
     private javax.swing.JTextField SpeedUpblock;
     private javax.swing.JTextField SpeedUprow;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
